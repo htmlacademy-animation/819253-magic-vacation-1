@@ -67,24 +67,14 @@
   &.swiper-slide-active,
   &.swiper-slide-next {
     & .slider__item-text {
-      animation: sliderTextAnimation 0.3s ease-in forwards;
-
-      @keyframes sliderTextAnimation {
-        0% {
-          transform: translateX(30px);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
   &.swiper-slide-next {
     & .slider__item-text {
-      animation-delay: 0.3s;
+      transition-delay: 0.3s;
     }
   }
 }
@@ -121,6 +111,8 @@
   font-size: 1.8rem;
   line-height: 2rem;
   opacity: 0;
+  transform: translateX(30px);
+  transition: opacity ease-in $interactive-items-duration-default, transform ease-in $interactive-items-duration-default;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;

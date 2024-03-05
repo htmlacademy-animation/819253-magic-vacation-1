@@ -35,6 +35,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width ease $interactive-items-duration-default, height ease $interactive-items-duration-default;
   }
 
   svg {
